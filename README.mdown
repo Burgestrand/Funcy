@@ -1,0 +1,35 @@
+What is Funcy?
+==============
+I (the developer) am a big fan of functional programming. It has had a
+big — positive — impact on all I do. I also am a big fan of scripting
+languages such as Ruby, Python and PHP. PHP has closures as of 5.3, but
+no equivalents for powerful functions from functional languages such as
+currying, function composition etc.
+
+This is what Funcy brings to PHP! YAY!
+
+What’s missing in PHP?
+----------------------
+- partially applying functions
+
+        add(a, b): a + b
+        add_five: add(5)
+        
+        print add_five(10) // 15
+      
+- composing functions
+  
+        add(a, b): a + b
+        square(x): x * x
+        squad(a, b): compose(square, add)
+        
+        print squad(2, 3) // ((2 + 3) * (2 + 3)) = 25!
+  
+- map, reduce (fold)
+
+  There are [array_map][] and [array_reduce][] in PHP already, but they
+  *only* work for arrays. I want something that works for all [traversable things][], be they arrays or objects.
+
+[array_map]: http://php.net/array_map
+[array_reduce]: http://php.net/array_reduce
+[traversable things]: http://php.net/Traversable
