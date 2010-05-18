@@ -1,12 +1,8 @@
 What is Funcy?
 ==============
-I (the developer) am a big fan of functional programming. It has had a
-big — positive — impact on all I do. I also am a big fan of scripting
-languages such as Ruby, Python and PHP. PHP has closures as of 5.3, but
-no equivalents for powerful functions from functional languages such as
-currying, function composition etc.
+I (the developer) am a big fan of functional programming. It has had a big — positive — impact on all I do. I also am a big fan of scripting languages such as Ruby, Python and PHP. PHP has closures (anonymous functions) as of 5.3, but no equivalents for powerful functions from functional languages such as currying, function composition etc.
 
-This is what Funcy brings to PHP! YAY!
+Funcy brings all the functioning functional funkyness to PHP. Awesome!
 
 What’s missing in PHP?
 ----------------------
