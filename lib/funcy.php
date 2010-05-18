@@ -94,6 +94,38 @@
       return call_user_func_array($fn, array_merge($args, $xargs));
     };
   }
+  
+  /**
+   * Execute callback on each element in the sequence
+   * 
+   * Example (pseudocode)
+   * --------------------
+   *     greet(name): return uppercase(name)
+   *     names = 'Kim', 'Elin', 'Kelin'
+   * 
+   *     map(greet, names) // 'KIM', 'ELIN', 'KELIN'
+   * 
+   * @see array_map
+   * @param callback
+   * @param Iterator
+   * @return array
+   */
+  function map($fn, $iterable)
+  {
+    if ( ! is_callable($fn))
+    {
+      trigger_error('First argument must be a valid callback', E_USER_ERROR);
+    }
+    
+    $result = array();
+    
+    foreach ($iterable as $key => $val)
+    {
+      $result[$key] = $fn($val);
+    }
+    
+    return $result;
+  }
 
 /* End of file funcy.php */
 /* Location: ./lib/funcy.php */ 
