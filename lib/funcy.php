@@ -63,6 +63,37 @@
       return $acc;
     };
   }
+  
+  /**
+   * Partial function application
+   * 
+   * Example (pseudocode)
+   * --------------------
+   *     fa(greet, name): return greet + ' ' + name
+   *     fx = curry(fa, 'Hello')
+   *
+   *     fx('Kim') // Hello Kim
+   *     fx('Elin') // Hello Elin
+   * 
+   * @param callback
+   * @param a1, a2…
+   * @return closure ∫(callback(a1, a2, …))
+   */
+  function curry($fn)
+  {
+    $args = func_get_args();
+    array_shift($args);
+    
+    if ( ! is_callable($fn))
+    {
+      trigger_error('First argument must be a valid callback', E_USER_ERROR);
+    }
+    
+    return function() use ($fn, $args) {
+      $xargs = func_get_args();
+      return call_user_func_array($fn, array_merge($args, $xargs));
+    };
+  }
 
 /* End of file funcy.php */
 /* Location: ./lib/funcy.php */ 
