@@ -96,7 +96,7 @@
   }
   
   /**
-   * Execute callback on each element in the sequence
+   * Execute the callback on each element in the sequence
    * 
    * Example (pseudocode)
    * --------------------
@@ -125,6 +125,40 @@
     }
     
     return $result;
+  }
+  
+  /**
+   * Executes the callback on `init` and the first element, then it executes
+   * the callback on the result of the previous execution and the second element
+   * and so on.
+   * 
+   * Example (pseudocode)
+   * --------------------
+   *     add(a, b): return a + b
+   *     numbers = 0, 1, 2, 3, 4, 5    
+   * 
+   *     print reduce(add, 0, numbers) // 15
+   * 
+   * @param callback
+   * @param mixed init
+   * @param Iterator
+   * @return array
+   */
+  function reduce($fn, $init, $iterable)
+  {
+    if ( ! is_callable($fn))
+    {
+      trigger_error('First argument must be a valid callback', E_USER_ERROR);
+    }
+    
+    $acc = $init;
+    
+    foreach ($iterable as $x)
+    {
+      $acc = $fn($acc, $x);
+    }
+    
+    return $acc;
   }
 
 /* End of file funcy.php */
