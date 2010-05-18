@@ -53,6 +53,18 @@
     return is_identical(reduce($a, 1, $range), 16); // 1+0+1+2+3+4+5
   }
   
+  function test_flip()
+  {
+    $a = function($a, $b) { return pow($a, $b); };
+    $b = function($a, $b, $c) { return $a . $b . $c; };
+    
+    $af = flip($a);
+    $bf = flip($b);
+    
+    return is_identical($af(10, 2), $a(2, 10))
+        && is_identical($bf('a', 'b', 'c'), $b('b', 'a', 'c'));
+  }
+  
   // Extract tests and run!
   $functions = get_defined_functions();
   $functions = $functions['user'];

@@ -160,6 +160,30 @@
     
     return $acc;
   }
+  
+  /**
+   * Flips the (first two) arguments of a function.
+   * 
+   * Example (pseudocode)
+   * --------------------
+   *     pow(a, b): return a ** b
+   *     wop: flip(pow)
+   *     
+   *     print wop(10, 2) // 1024
+   * 
+   * @param callback
+   * @return closure
+   */
+  function flip($fn)
+  {
+    return function() use ($fn) {
+      $args = func_get_args();
+      $a = array_shift($args);
+      $b = array_shift($args);
+      $args = array_merge(array($b, $a), $args);
+      return call_user_func_array($fn, $args);
+    };
+  }
 
 /* End of file funcy.php */
 /* Location: ./lib/funcy.php */ 
