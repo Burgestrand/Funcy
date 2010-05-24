@@ -1,5 +1,15 @@
 <?php
   /**
+   * Functional functions for PHP.
+   * 
+   * Please see accompanying README for more information.
+   * 
+   * @copyright Kim Burgestrand <kim@burgestrand.se>
+   * @license X11 license (MIT license)
+   * @homepage http://github.com/Burgestrand/Funcy
+   */
+
+  /**
    * Function composition
    * 
    * Example (pseudocode)

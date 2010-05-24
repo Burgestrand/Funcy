@@ -26,6 +26,10 @@ What’s missing in PHP?
   There are [array_map][] and [array_reduce][] in PHP already, but they
   *only* work for arrays. I want something that works for all [traversable things][], be they arrays or objects.
 
+License?
+----------
+See LICENSE.
+
 [array_map]: http://php.net/array_map
 [array_reduce]: http://php.net/array_reduce
 [traversable things]: http://php.net/Traversable
