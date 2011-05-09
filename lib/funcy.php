@@ -4,7 +4,7 @@
    * 
    * Please see accompanying README for more information.
    * 
-   * @copyright Kim Burgestrand <kim@burgestrand.se>
+   * @copyright Kim Burgestrand
    * @license X11 license (MIT license)
    * @homepage http://github.com/Burgestrand/Funcy
    */
